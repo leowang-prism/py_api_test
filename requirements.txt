@@ -1,5 +1,6 @@
 pytest>=7.0.0
 pytest-assume>=2.4.3
+pytest-cov>=4.1.0
 allure-pytest>=2.13.0
 
 # HTTP 请求

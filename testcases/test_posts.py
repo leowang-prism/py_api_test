@@ -2,6 +2,7 @@
 import os
 import sys
 from pathlib import Path
+import time
 
 # 添加项目根目录到 Python 路径
 PROJECT_ROOT = str(Path(__file__).parent.parent)
@@ -81,3 +82,97 @@ class TestPosts:
             except Exception as e:
                 allure.attach(str(e), '异常信息', allure.attachment_type.TEXT)
                 raise
+
+    @allure.story("创建并更新帖子流程")
+    @allure.title("测试创建和更新帖子的完整流程")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_create_and_update_post_flow(self):
+        """测试创建和更新帖子的完整流程"""
+        try:
+            # 第一步：创建帖子
+            with allure.step("创建新帖子"):
+                create_data = self.test_data['test_post']
+                create_response = self.posts_api.create_post(
+                    title=create_data['title'],
+                    body=create_data['body'],
+                    user_id=create_data['user_id']
+                )
+                
+                # 验证创建响应
+                assert create_response.status_code == 201, "创建帖子应返回201状态码"
+                created_post = create_response.json()
+                assert created_post['title'] == create_data['title'], "创建的帖子标题不匹配"
+                assert created_post['body'] == create_data['body'], "创建的帖子内容不匹配"
+                
+                # 记录响应信息
+                allure.attach(
+                    f"创建响应: {create_response.text}\n"
+                    f"状态码: {create_response.status_code}",
+                    '创建帖子响应详情',
+                    allure.attachment_type.TEXT
+                )
+
+            # 第二步：更新帖子
+            with allure.step("更新帖子"):
+                update_data = self.test_data['update_post']
+                update_response = self.posts_api.update_post(
+                    post_id=created_post['id'],
+                    title=update_data['title'],
+                    body=update_data['body'],
+                    user_id=update_data['user_id']
+                )
+                
+                # 记录响应信息（无论成功与否）
+                allure.attach(
+                    f"更新请求数据: {update_data}\n"
+                    f"更新响应: {update_response.text}\n"
+                    f"状态码: {update_response.status_code}",
+                    '更新帖子响应详情',
+                    allure.attachment_type.TEXT
+                )
+                
+                # 验证更新响应
+                assert update_response.status_code in [200, 201], f"更新帖子应返回200或201状态码，实际返回{update_response.status_code}"
+                updated_post = update_response.json()
+                
+                # 验证更新的字段
+                if 'title' in updated_post:
+                    assert updated_post['title'] == update_data['title'], "更新的帖子标题不匹配"
+                if 'body' in updated_post:
+                    assert updated_post['body'] == update_data['body'], "更新的帖子内容不匹配"
+                
+        except Exception as e:
+            # 记录详细的错误信息
+            allure.attach(
+                f"错误类型: {type(e).__name__}\n"
+                f"错误信息: {str(e)}\n",
+                '测试失败详情',
+                allure.attachment_type.TEXT
+            )
+            raise
+
+    @allure.story("删除帖子")
+    @allure.title("测试删除帖子")
+    @allure.severity(allure.severity_level.NORMAL)
+    def test_delete_post(self):
+        """测试删除帖子"""
+        # 第一步：创建要删除的帖子
+        with allure.step("创建待删除的帖子"):
+            create_data = self.test_data['test_post']
+            create_response = self.posts_api.create_post(
+                title=create_data['title'],
+                body=create_data['body'],
+                user_id=create_data['user_id']
+            )
+            assert create_response.status_code == 201
+            post_id = create_response.json()['id']
+
+        # 第二步：删除帖子
+        with allure.step(f"删除帖子 - ID: {post_id}"):
+            delete_response = self.posts_api.delete_post(post_id)
+            assert delete_response.status_code == 200
+
+        # 第三步：验证帖子已被删除
+        with allure.step("验证帖子已被删除"):
+            get_response = self.posts_api.get_post(post_id)
+            assert get_response.status_code == 404

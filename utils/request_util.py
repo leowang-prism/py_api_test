@@ -23,4 +23,4 @@ class RequestUtil:
             response = self.session.request(method, url, **kwargs)
             return response
         except requests.exceptions.RequestException as e:
-            raise Exception(f"请求发生错误: {str(e)}") 
+            raise Exception(f"请求发生错误: {str(e)}")

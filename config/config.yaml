@@ -1,3 +1,9 @@
 api:
+  # JSONPlaceholder 是模拟 API，不会真实保存数据
   base_url: "https://jsonplaceholder.typicode.com"
   timeout: 30
+  mock: true  # 标记这是一个模拟 API
+  notes: |
+    - POST 请求将返回 201，但不会真正创建数据
+    - PATCH/PUT 请求将返回 200，但不会真正更新数据
+    - DELETE 请求将返回 200，但不会真正删除数据

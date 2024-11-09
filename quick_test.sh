@@ -9,5 +9,8 @@ mkdir -p reports
 # 运行测试
 pytest testcases/test_posts.py -v
 
-# 直接启动 allure 服务并打开浏览器
+# 运行方法:
+# 1. 给脚本添加执行权限: chmod +x quick_test.sh
+# 2. 执行脚本: ./quick_test.sh
+# 或者直接使用 bash 运行: bash quick_test.sh
 allure serve reports 

@@ -1,0 +1,20 @@
+api:
+  base_url: "https://jsonplaceholder.typicode.com"
+  timeout: 30
+  verify_ssl: true
+  cert_path: null
+  mock: false
+
+auth:
+  token_expire: 1800
+  refresh_threshold: 300
+
+database:
+  mysql:
+    host: "localhost"
+    port: 3306
+    user: "root"
+    password: "root"
+    database: "test_db"
+    pool_size: 5
+    timeout: 30

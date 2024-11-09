@@ -1,5 +1,0 @@
-[32mINFO    [0m TestLogger:log_util.py:45 获取帖子 ID: 99999
-[32mINFO    [0m TestLogger:log_util.py:45 发送 GET 请求到 https://jsonplaceholder.typicode.com/posts/99999
-[35mDEBUG   [0m TestLogger:log_util.py:42 请求参数: {}
-[32mINFO    [0m TestLogger:log_util.py:45 响应状态码: 404
-[35mDEBUG   [0m TestLogger:log_util.py:42 响应内容: {}

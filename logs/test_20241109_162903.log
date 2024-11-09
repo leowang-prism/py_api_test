@@ -1,0 +1,43 @@
+[2024-11-09 16:29:03] DEBUG [log_util.py:42] - 加载配置文件: /Users/king/Desktop/pytestpy/config/config.yaml
+[2024-11-09 16:29:03] WARNING [log_util.py:48] - SSL验证已禁用，仅用于测试环境！
+[2024-11-09 16:29:03] INFO [log_util.py:45] - RequestUtil 初始化完成 [线程ID: 8284867584]
+[2024-11-09 16:29:03] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:03] INFO [log_util.py:45] - PostsApi 初始化完成
+[2024-11-09 16:29:03] INFO [log_util.py:45] - 测试类初始化完成
+[2024-11-09 16:29:03] INFO [log_util.py:45] - 测试数据加载完成
+[2024-11-09 16:29:03] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:03] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:03] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:03] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:03] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:04] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:29:04] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:04] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:04] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:04] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:04] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:04] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:29:04] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:04] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:04] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:04] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:04] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:05] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:29:05] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:05] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:05] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:05] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:05] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:06] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:29:06] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:06] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:06] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:06] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:06] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:08] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:29:08] DEBUG [log_util.py:42] - 获取基础URL: https://api.example.com
+[2024-11-09 16:29:08] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:29:08] INFO [log_util.py:45] - 用户登录: testuser
+[2024-11-09 16:29:08] INFO [log_util.py:45] - 发送 POST 请求到 https://api.example.com/auth/login
+[2024-11-09 16:29:08] DEBUG [log_util.py:42] - 请求参数: {'json': {'username': 'testuser', 'password': 'testpass'}}
+[2024-11-09 16:29:08] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='api.example.com', port=443): Max retries exceeded with url: /auth/login (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))

@@ -1,12 +1,5 @@
-api:
-  # JSONPlaceholder 是模拟 API，不会真实保存数据
-  base_url: "https://jsonplaceholder.typicode.com"
-  timeout: 30
-  mock: true  # 标记这是一个模拟 API
-  notes: |
-    - POST 请求将返回 201，但不会真正创建数据
-    - PATCH/PUT 请求将返回 200，但不会真正更新数据
-    - DELETE 请求将返回 200，但不会真正删除数据
+# 通用配置
+env: dev  # 默认使用dev环境
 
 logging:
   level: DEBUG
@@ -14,3 +7,5 @@ logging:
   console_level: INFO
   format: "[%(asctime)s] %(levelname)s [%(filename)s:%(lineno)d] - %(message)s"
   date_format: "%Y-%m-%d %H:%M:%S"
+
+# 环境特定配置将从 env/ 目录下加载

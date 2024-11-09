@@ -1,0 +1,117 @@
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 
+==================================================
+当前测试环境: TEST
+API地址: https://test-api.example.com
+超时设置: 30秒
+SSL验证: 启用
+==================================================
+
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 
+==================================================
+当前测试环境: TEST
+API地址: https://test-api.example.com
+超时设置: 30秒
+SSL验证: 启用
+==================================================
+
+[2024-11-09 16:48:59] INFO [log_util.py:45] - RequestUtil 初始化完成 [环境: test]
+[2024-11-09 16:48:59] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:48:59] INFO [log_util.py:45] - PostsApi 初始化完成
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 测试类初始化完成
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 测试数据加载完成
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:48:59] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:48:59] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:48:59] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:48:59] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:00] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:01] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:03] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:03] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:03] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:49:03] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:49:03] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:49:03] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:49:03] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:49:03] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:04] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:05] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:07] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:07] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:07] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:49:07] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:49:07] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:49:07] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:49:07] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:49:07] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:07] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:09] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:10] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:10] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:11] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:49:11] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:49:11] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:49:11] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:49:11] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:49:11] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:11] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:13] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:14] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:14] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:14] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:49:14] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:49:14] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:49:14] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:49:14] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:49:14] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:15] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:16] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:18] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:18] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:18] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://test-api.example.com
+==================================================
+
+[2024-11-09 16:49:18] DEBUG [log_util.py:42] - 获取基础URL: https://test-api.example.com
+[2024-11-09 16:49:18] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:49:18] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:49:18] INFO [log_util.py:45] - 发送 GET 请求到 https://test-api.example.com/users/1
+[2024-11-09 16:49:18] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:49:18] WARNING [log_util.py:48] - 请求失败，正在重试 (1/3)
+[2024-11-09 16:49:20] WARNING [log_util.py:48] - 请求失败，正在重试 (2/3)
+[2024-11-09 16:49:21] ERROR [log_util.py:51] - SSL证书验证失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+[2024-11-09 16:49:21] ERROR [log_util.py:51] - 登录失败: 请求失败: HTTPSConnectionPool(host='test-api.example.com', port=443): Max retries exceeded with url: /users/1 (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))

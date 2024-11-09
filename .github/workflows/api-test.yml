@@ -1,0 +1,138 @@
+name: API Automated Tests
+
+on:
+  push:
+    branches: [ main, master ]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13.0'
+        cache: 'pip'  # 缓存pip依赖
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Cache flake8
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-flake8-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-flake8-
+        
+    - name: Check code style
+      run: |
+        pip install flake8
+        flake8 \
+          api/ \
+          common/ \
+          database/ \
+          testcases/ \
+          utils/ \
+          --count \
+          --select=E9,F63,F7,F82 \
+          --show-source \
+          --statistics \
+          --exclude=.git,__pycache__,.venv,venv,env,build,dist
+        
+    - name: Run tests
+      env:
+        ENV: test
+        DB_HOST: localhost
+        DB_PORT: 3306
+        DB_USER: root
+        DB_PASSWORD: root
+        DB_NAME: test_db
+      run: |
+        pytest testcases/ \
+          -v \
+          --alluredir=./reports/allure-results \
+          --junitxml=junit/test-results.xml \
+          --cov=. \
+          --cov-report=xml \
+          --cov-report=html
+        
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: reports/allure-results
+        allure_report: reports/allure-report
+        allure_history: allure-history
+        keep_reports: 20
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-results
+        path: |
+          reports/allure-report
+          junit/test-results.xml
+          coverage.xml
+          htmlcov
+          logs/test_execution.log
+        retention-days: 30
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: |
+          junit/test-results.xml
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
+        verbose: true
+
+    - name: Deploy Allure Report to GitHub Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: allure-history
+        keep_files: true
+
+    - name: Send notification
+      if: always()
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: '#ci-notifications'
+        SLACK_COLOR: ${{ job.status }}
+        SLACK_TITLE: 'Test Results'
+        SLACK_MESSAGE: 'API Test Results: ${{ job.status }}'
+        SLACK_FOOTER: 'Powered by GitHub Actions'

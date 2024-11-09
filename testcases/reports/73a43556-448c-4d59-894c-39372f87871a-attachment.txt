@@ -1,0 +1,23 @@
+INFO     TestLogger:log_util.py:45 开始测试：创建和更新帖子流程
+INFO     TestLogger:log_util.py:45 创建新帖子
+DEBUG    TestLogger:log_util.py:42 标题: 测试帖子标题, 内容: 测试帖子内容, 用户ID: 1
+INFO     TestLogger:log_util.py:45 发送 POST 请求到 https://jsonplaceholder.typicode.com/posts
+DEBUG    TestLogger:log_util.py:42 请求参数: {'json': {'title': '测试帖子标题', 'body': '测试帖子内容', 'userId': 1}}
+INFO     TestLogger:log_util.py:45 响应状态码: 201
+DEBUG    TestLogger:log_util.py:42 响应内容: {
+  "title": "测试帖子标题",
+  "body": "测试帖子内容",
+  "userId": 1,
+  "id": 101
+}
+INFO     TestLogger:log_util.py:45 更新帖子 ID: 101
+DEBUG    TestLogger:log_util.py:42 新标题: 更新后的帖子标题, 新内容: 更新后的帖子内容, 用户ID: 1
+INFO     TestLogger:log_util.py:45 发送 PATCH 请求到 https://jsonplaceholder.typicode.com/posts/101
+DEBUG    TestLogger:log_util.py:42 请求参数: {'json': {'title': '更新后的帖子标题', 'body': '更新后的帖子内容', 'userId': 1}}
+INFO     TestLogger:log_util.py:45 响应状态码: 200
+DEBUG    TestLogger:log_util.py:42 响应内容: {
+  "title": "更新后的帖子标题",
+  "body": "更新后的帖子内容",
+  "userId": 1
+}
+INFO     TestLogger:log_util.py:45 测试完成：创建和更新帖子流程

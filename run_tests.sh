@@ -1,6 +1,26 @@
 #!/bin/bash
 
-echo "开始执行测试..."
+# 获取环境参数，默认为dev
+ENV=${1:-dev}
+
+# 验证环境参数
+valid_envs=("dev" "test" "prod")
+if [[ ! " ${valid_envs[@]} " =~ " ${ENV} " ]]; then
+    echo "错误: 无效的环境名称。有效环境: ${valid_envs[*]}"
+    exit 1
+fi
+
+# 打印醒目的环境信息
+echo "
+====================================================
+                测试环境: ${ENV}
+===================================================="
+
+# 设置环境变量
+export ENV=$ENV
+
+# 显示当前环境信息
+python -c "from utils.env_util import env_manager; print(f'当前环境配置:\n基础URL: {env_manager.get_config()[\"api\"][\"base_url\"]}')"
 
 # 清理旧的报告
 echo "清理旧报告..."
@@ -15,16 +35,6 @@ pytest testcases/test_posts.py -v
 echo "生成Allure报告..."
 allure generate ./reports -o ./allure-report --clean
 
-# 启动浏览器打开报告
+# 直接使用 allure serve 打开报告
 echo "打开报告..."
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    open "http://localhost:63342/allure-report/index.html"
-elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Linux
-    xdg-open "http://localhost:63342/allure-report/index.html"
-fi
-
-# 启动 Python HTTP 服务器
-echo "启动HTTP服务器..."
-python3 -m http.server 63342 --directory allure-report
+allure serve reports

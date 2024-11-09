@@ -1,0 +1,36 @@
+# 开发环境配置文件
+# 包含开发环境特定的配置参数
+
+# API相关配置
+api:
+  # API基础URL
+  base_url: "https://jsonplaceholder.typicode.com"
+  # 请求超时时间（秒）
+  timeout: 60
+  # 是否验证SSL证书
+  verify_ssl: false  # 开发环境禁用SSL验证以方便调试
+  # SSL证书路径（如果需要）
+  cert_path: null
+  # 是否为模拟环境
+  mock: true  # 标记为模拟环境，将跳过数据库验证
+
+# 认证相关配置
+auth:
+  # token过期时间（秒）
+  token_expire: 3600
+  # token刷新阈值（秒）
+  refresh_threshold: 300
+
+# 数据库配置
+database:
+  mysql:
+    # 数据库连接信息
+    host: localhost
+    port: 3306
+    user: root
+    password: root
+    database: test_db
+    # 连接池配置
+    pool_size: 5
+    # 数据库操作超时时间（秒）
+    timeout: 30

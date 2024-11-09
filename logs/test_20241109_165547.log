@@ -1,0 +1,170 @@
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 
+==================================================
+当前测试环境: TEST
+API地址: https://api.github.com
+超时设置: 30秒
+SSL验证: 启用
+==================================================
+
+[2024-11-09 16:55:47] INFO [log_util.py:45] - RequestUtil 初始化完成 [环境: test]
+[2024-11-09 16:55:47] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:47] INFO [log_util.py:45] - PostsApi 初始化完成
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 测试类初始化完成
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 测试数据加载完成
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:47] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:47] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:47] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:47] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 获取帖子 ID: 1
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/posts/1
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:48] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:48] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:48] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 获取帖子 ID: 2
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/posts/2
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:49] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:49] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:49] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 获取帖子 ID: 99999
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/posts/99999
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:50] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 创建新帖子
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 标题: 测试帖子标题, 内容: 测试帖子内容, 用户ID: 1
+[2024-11-09 16:55:50] INFO [log_util.py:45] - 发送 POST 请求到 https://api.github.com/posts
+[2024-11-09 16:55:50] DEBUG [log_util.py:42] - 请求参数: {'json': {'title': '测试帖子标题', 'body': '测试帖子内容', 'userId': 1}}
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:51] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 开始测试：创建和更新帖子流程
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 创建新帖子
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 标题: 测试帖子标题, 内容: 测试帖子内容, 用户ID: 1
+[2024-11-09 16:55:51] INFO [log_util.py:45] - 发送 POST 请求到 https://api.github.com/posts
+[2024-11-09 16:55:51] DEBUG [log_util.py:42] - 请求参数: {'json': {'title': '测试帖子标题', 'body': '测试帖子内容', 'userId': 1}}
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:52] ERROR [log_util.py:51] - 测试失败：创建帖子应返回201状态码
+assert 401 == 201
+ +  where 401 = <Response [401]>.status_code
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://api.github.com
+==================================================
+
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 获取基础URL: https://api.github.com
+[2024-11-09 16:55:52] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 发送 GET 请求到 https://api.github.com/users/1
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 响应内容: {"login":"1","id":1825798,"node_id":"MDQ6VXNlcjE4MjU3OTg=","avatar_url":"https://avatars.githubusercontent.com/u/1825798?v=4","gravatar_id":"","url":"https://api.github.com/users/1","html_url":"https://github.com/1","followers_url":"https://api.github.com/users/1/followers","following_url":"https://api.github.com/users/1/following{/other_user}","gists_url":"https://api.github.com/users/1/gists{/gist_id}","starred_url":"https://api.github.com/users/1/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/1/subscriptions","organizations_url":"https://api.github.com/users/1/orgs","repos_url":"https://api.github.com/users/1/repos","events_url":"https://api.github.com/users/1/events{/privacy}","received_events_url":"https://api.github.com/users/1/received_events","type":"User","user_view_type":"public","site_admin":false,"name":"Michael Balaban","company":"Lambda","blog":"","location":"San Francisco, CA","email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":1,"public_gists":0,"followers":63,"following":0,"created_at":"2012-06-07T06:10:07Z","updated_at":"2024-11-07T22:11:24Z"}
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 创建新帖子
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 标题: 测试帖子标题, 内容: 测试帖子内容, 用户ID: 1
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 发送 POST 请求到 https://api.github.com/posts
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 请求参数: {'json': {'title': '测试帖子标题', 'body': '测试帖子内容', 'userId': 1}}
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 响应状态码: 401
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - 响应内容: {"message":"Bad credentials","documentation_url":"https://docs.github.com/rest","status":"401"}
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 16:55:52] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 16:55:52] INFO [log_util.py:45] - 测试后置：已登出

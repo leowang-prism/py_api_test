@@ -1,6 +1,7 @@
 import requests
 from utils.request_util import RequestUtil
 from utils.log_util import logger
+from database.mysql_handler import MySQLHandler
 
 class PostsApi:
     """帖子相关的API封装类"""
@@ -46,3 +47,13 @@ class PostsApi:
         logger.info(f"删除帖子 ID: {post_id}")
         url = f"{self.base_url}/posts/{post_id}"
         return self.request_util.send_request("DELETE", url)
+
+    def verify_post_status(self, post_id, mysql_db):
+        """验证帖子状态"""
+        sql = """
+        SELECT status, updated_at 
+        FROM posts 
+        WHERE id = %s
+        """
+        result = mysql_db.execute_query(sql, (post_id,))
+        return result[0] if result else None

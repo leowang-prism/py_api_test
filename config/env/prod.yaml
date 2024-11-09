@@ -1,0 +1,10 @@
+api:
+  base_url: "https://jsonplaceholder.typicode.com"
+  timeout: 10
+  verify_ssl: true
+  cert_path: null
+  mock: false
+
+auth:
+  token_expire: 900
+  refresh_threshold: 180

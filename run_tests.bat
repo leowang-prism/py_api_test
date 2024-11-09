@@ -1,5 +1,27 @@
 @echo off
-echo 开始执行测试...
+setlocal
+
+:: 获取环境参数，默认为dev
+set ENV=%1
+if "%ENV%"=="" set ENV=dev
+
+:: 验证环境参数
+set "valid=0"
+for %%i in (dev test prod) do if /i "%ENV%"=="%%i" set "valid=1"
+if "%valid%"=="0" (
+    echo 错误: 无效的环境名称。有效环境: dev, test, prod
+    exit /b 1
+)
+
+:: 打印醒目的环境信息
+echo.
+echo ====================================================
+echo                 测试环境: %ENV%
+echo ====================================================
+echo.
+
+:: 显示当前环境信息
+python -c "from utils.env_util import env_manager; print(f'当前环境配置:\n基础URL: {env_manager.get_config()[\"api\"][\"base_url\"]}')"
 
 :: 清理旧的报告
 echo 清理旧报告...
@@ -11,16 +33,8 @@ mkdir reports
 echo 运行测试用例...
 pytest testcases/test_posts.py -v
 
-:: 生成报告
-echo 生成Allure报告...
-allure generate ./reports -o ./allure-report --clean
-
-:: 启动默认浏览器打开报告
+:: 生成并打开报告
 echo 打开报告...
-start "" "http://localhost:63342/allure-report/index.html"
-
-:: 使用 Python 启动一个简单的 HTTP 服务器
-echo 启动HTTP服务器...
-python -m http.server 63342 --directory allure-report
+allure serve reports
 
 echo 完成！ 

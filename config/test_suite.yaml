@@ -1,0 +1,21 @@
+# 测试套件配置
+suites:
+  smoke:
+    - test_login
+    - test_basic_functions
+  regression:
+    - test_all_features
+    - test_edge_cases
+  performance:
+    - test_load
+    - test_stress
+
+# 测试优先级
+priorities:
+  high:
+    - test_critical_path
+    - test_payment
+  medium:
+    - test_normal_functions
+  low:
+    - test_optional_features 

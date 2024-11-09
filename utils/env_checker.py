@@ -2,6 +2,7 @@
 import socket
 import requests # type: ignore
 import os
+from utils.env_util import get_current_env
 
 class EnvironmentChecker:
     @staticmethod
@@ -20,3 +21,13 @@ class EnvironmentChecker:
         result = sock.connect_ex((host, port))
         sock.close()
         return result == 0 
+
+def validate_environment():
+    """验证当前环境配置是否正确"""
+    current_env = get_current_env()
+    valid_envs = ['dev', 'test', 'prod']
+    
+    if current_env not in valid_envs:
+        raise ValueError(f"Invalid environment: {current_env}. Must be one of {valid_envs}")
+    
+    return current_env

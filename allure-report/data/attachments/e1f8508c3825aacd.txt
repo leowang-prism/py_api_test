@@ -1,0 +1,68 @@
+[31m[1mERROR   [0m TestLogger:log_util.py:51 数据库连接池初始化失败: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+[32mINFO    [0m TestLogger:log_util.py:45 数据库连接初始化成功
+[32mINFO    [0m TestLogger:log_util.py:45 开始执行测试: test_create_post_with_db_validation
+[32mINFO    [0m TestLogger:log_util.py:45 
+==================================================
+测试开始执行
+环境: TEST
+API地址: https://jsonplaceholder.typicode.com
+==================================================
+
+[35mDEBUG   [0m TestLogger:log_util.py:42 获取基础URL: https://jsonplaceholder.typicode.com
+[32mINFO    [0m TestLogger:log_util.py:45 AuthApi 初始化完成
+[32mINFO    [0m TestLogger:log_util.py:45 模拟用户登录: testuser
+[32mINFO    [0m TestLogger:log_util.py:45 发送 GET 请求到 https://jsonplaceholder.typicode.com/users/1
+[35mDEBUG   [0m TestLogger:log_util.py:42 请求参数: {}
+[32mINFO    [0m TestLogger:log_util.py:45 响应状态码: 200
+[35mDEBUG   [0m TestLogger:log_util.py:42 响应内容: {
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+[35mDEBUG   [0m TestLogger:log_util.py:42 Token已更新
+[32mINFO    [0m TestLogger:log_util.py:45 模拟登录成功，token已保存
+[32mINFO    [0m TestLogger:log_util.py:45 测试前置：登录成功
+[32mINFO    [0m TestLogger:log_util.py:45 当前测试环境: test
+[32mINFO    [0m TestLogger:log_util.py:45 创建新帖子
+[35mDEBUG   [0m TestLogger:log_util.py:42 标题: 测试标题, 内容: 测试内容, 用户ID: 1
+[32mINFO    [0m TestLogger:log_util.py:45 发送 POST 请求到 https://jsonplaceholder.typicode.com/posts
+[35mDEBUG   [0m TestLogger:log_util.py:42 请求参数: {'json': {'title': '测试标题', 'body': '测试内容', 'userId': 1}}
+[32mINFO    [0m TestLogger:log_util.py:45 响应状态码: 201
+[35mDEBUG   [0m TestLogger:log_util.py:42 响应内容: {
+  "title": "测试标题",
+  "body": "测试内容",
+  "userId": 1,
+  "id": 101
+}
+[32mINFO    [0m TestLogger:log_util.py:45 API响应数据: {'title': '测试标题', 'body': '测试内容', 'userId': 1, 'id': 101}
+[32mINFO    [0m TestLogger:log_util.py:45 执行数据库验证
+[33mWARNING [0m TestLogger:log_util.py:48 数据库功能未启用，跳过查询
+[32mINFO    [0m TestLogger:log_util.py:45 数据库连接正常
+[33mWARNING [0m TestLogger:log_util.py:48 数据库功能未启用，跳过查询
+[31m[1mERROR   [0m TestLogger:log_util.py:51 数据库操作失败: list index out of range
+[31m[1mERROR   [0m TestLogger:log_util.py:51 测试执行失败: list index out of range
+[33mWARNING [0m TestLogger:log_util.py:48 数据库功能未启用，跳过查询
+[32mINFO    [0m TestLogger:log_util.py:45 测试数据清理完成
+[32mINFO    [0m TestLogger:log_util.py:45 模拟用户登出
+[35mDEBUG   [0m TestLogger:log_util.py:42 Token已清除
+[32mINFO    [0m TestLogger:log_util.py:45 测试后置：已登出
+[32mINFO    [0m TestLogger:log_util.py:45 测试执行完成: test_create_post_with_db_validation
+[32mINFO    [0m TestLogger:log_util.py:45 关闭数据库连接

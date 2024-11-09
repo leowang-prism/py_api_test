@@ -1,18 +1,8 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"测试获取帖子接口","312","测试获取单个帖子","testcases","Sat Nov 09 18:59:19 CST 2024","passed","Sat Nov 09 18:59:20 CST 2024","TestPosts","test_posts","",""
-"测试删除帖子接口","1280","测试删除帖子","testcases","Sat Nov 09 18:59:23 CST 2024","passed","Sat Nov 09 18:59:24 CST 2024","TestPosts","test_posts","",""
-"测试获取帖子接口","310","测试获取单个帖子","testcases","Sat Nov 09 18:59:20 CST 2024","passed","Sat Nov 09 18:59:21 CST 2024","TestPosts","test_posts","",""
-"测试更新帖子接口","367","测试更新帖子","testcases","Sat Nov 09 18:59:22 CST 2024","passed","Sat Nov 09 18:59:22 CST 2024","TestPosts","test_posts","",""
-"测试创建帖子接口","374","测试创建新帖子","testcases","Sat Nov 09 18:59:21 CST 2024","passed","Sat Nov 09 18:59:21 CST 2024","TestPosts","test_posts","",""
-"
-创建帖子并验证数据库记录（在非dev环境下执行）
-
-参数:
-    mysql_db: 数据库连接对象
-    
-验证点:
-    1. API创建帖子成功
-    2. 数据库记录正确
-    3. 数据清理成功
-","445","测试创建帖子并验证数据库记录","testcases","Sat Nov 09 18:59:24 CST 2024","passed","Sat Nov 09 18:59:25 CST 2024","TestPosts","test_posts","",""
-"测试获取帖子接口","321","测试获取单个帖子","testcases","Sat Nov 09 18:59:20 CST 2024","passed","Sat Nov 09 18:59:20 CST 2024","TestPosts","test_posts","",""
+"测试获取帖子接口","192","测试获取单个帖子","testcases","Sat Nov 09 19:33:46 CST 2024","passed","Sat Nov 09 19:33:46 CST 2024","TestPosts","test_posts","",""
+"测试获取帖子接口","503","测试获取单个帖子","testcases","Sat Nov 09 19:33:47 CST 2024","passed","Sat Nov 09 19:33:47 CST 2024","TestPosts","test_posts","",""
+"创建帖子并验证数据库记录","570","测试创建帖子并验证数据库记录","testcases","Sat Nov 09 19:33:51 CST 2024","broken","Sat Nov 09 19:33:51 CST 2024","TestPosts","test_posts","",""
+"测试获取帖子接口","408","测试获取单个帖子","testcases","Sat Nov 09 19:33:46 CST 2024","passed","Sat Nov 09 19:33:46 CST 2024","TestPosts","test_posts","",""
+"测试创建帖子接口","850","测试创建新帖子","testcases","Sat Nov 09 19:33:48 CST 2024","passed","Sat Nov 09 19:33:48 CST 2024","TestPosts","test_posts","",""
+"测试更新帖子接口","391","测试更新帖子","testcases","Sat Nov 09 19:33:49 CST 2024","passed","Sat Nov 09 19:33:49 CST 2024","TestPosts","test_posts","",""
+"测试删除帖子接口","1167","测试删除帖子","testcases","Sat Nov 09 19:33:49 CST 2024","passed","Sat Nov 09 19:33:51 CST 2024","TestPosts","test_posts","",""

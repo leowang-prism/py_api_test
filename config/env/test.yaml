@@ -18,3 +18,11 @@ database:
     database: "test_db"
     pool_size: 5
     timeout: 30
+
+# 测试环境特定配置
+logging:
+  level: DEBUG
+  file_level: DEBUG
+  console_level: DEBUG
+
+# 其他测试环境特定的配置项

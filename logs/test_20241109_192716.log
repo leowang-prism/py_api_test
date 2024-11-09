@@ -1,0 +1,4 @@
+[2024-11-09 19:27:17] INFO [log_util.py:45] - YAML 版本: 6.0.2
+[2024-11-09 19:27:17] ERROR [log_util.py:51] - 数据库连接池初始化失败: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+[2024-11-09 19:27:17] INFO [log_util.py:45] - 数据库连接初始化成功
+[2024-11-09 19:27:17] INFO [log_util.py:45] - 关闭数据库连接

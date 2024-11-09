@@ -21,6 +21,9 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        suite: [smoke, regression, performance]
     
     services:
       mysql:
@@ -70,26 +73,16 @@ jobs:
           --statistics \
           --exclude=.git,__pycache__,.venv,venv,env,build,dist
         
-    - name: Run tests
-      env:
-        ENV: test
-        DB_HOST: localhost
-        DB_PORT: 3306
-        DB_USER: root
-        DB_PASSWORD: root
-        DB_NAME: test_db
+    - name: Run test suite
       run: |
-        pip install pytest-cov
-        
-        pytest testcases/ \
-          -v \
-          --alluredir=./reports/allure-results \
-          --junitxml=junit/test-results.xml \
-          --cov=. \
-          --cov-report=xml \
-          --cov-report=html \
-          --cov-config=.coveragerc
-        
+        if [ "${{ matrix.suite }}" = "smoke" ]; then
+          pytest -v -m smoke --alluredir=./reports/allure-results
+        elif [ "${{ matrix.suite }}" = "regression" ]; then
+          pytest -v -m regression --alluredir=./reports/allure-results
+        elif [ "${{ matrix.suite }}" = "performance" ]; then
+          pytest -v -m performance --alluredir=./reports/allure-results
+        fi
+    
     - name: Generate Allure Report
       uses: simple-elf/allure-report-action@master
       if: always()

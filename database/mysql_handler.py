@@ -1,6 +1,6 @@
 try:
-    import pymysql
-    from dbutils.pooled_db import PooledDB
+    import pymysql # type: ignore
+    from dbutils.pooled_db import PooledDB # type: ignore
     HAS_DB_SUPPORT = True
 except ImportError:
     HAS_DB_SUPPORT = False

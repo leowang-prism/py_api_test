@@ -35,6 +35,7 @@ from utils.log_util import logger
 from testcases.base_test import BaseTest
 from utils.assert_util import Assertions
 from utils.env_util import env_manager
+from utils.markers import smoke_test, regression_test, performance_test, priority
 
 # 验证 yaml 版本（可选）
 logger.info(f"YAML 版本: {yaml.__version__}")
@@ -63,6 +64,8 @@ class TestPosts(BaseTest):
 
     @allure.story("获取帖子")
     @allure.title("测试获取单个帖子")
+    @smoke_test  # 标记为冒烟测试
+    @priority('high')  # 标记为高优先级
     @pytest.mark.parametrize("post_id", [1, 2, 99999])
     def test_get_post(self, post_id):
         """测试获取帖子接口"""
@@ -77,7 +80,8 @@ class TestPosts(BaseTest):
                 assert response.status_code == 404, "无效帖子应返回404"
 
     @allure.story("创建帖子")
-    @allure.title("测试创建新帖子")
+    @regression_test  # 标记为回归测试
+    @priority('medium')  # 标记为中优先级
     def test_create_post(self):
         """测试创建帖子接口"""
         test_data = self.test_data['test_post']
@@ -136,6 +140,12 @@ class TestPosts(BaseTest):
         with allure.step("验证帖子已被删除"):
             get_response = self.posts_api.get_post(post_id)
             assert get_response.status_code == 404, "已删除的帖子应返回404"
+
+    @allure.story("性能测试")
+    @performance_test  # 标记为性能测试
+    def test_post_performance(self):
+        """帖子接口性能测试"""
+        # ... 测试代码 ...
 
     # @allure.story("创建帖子并验证数据库记录")
     # @allure.title("测试创建帖子并验证数据库记录")

@@ -1,0 +1,62 @@
+[2024-11-09 21:17:47] INFO [log_util.py:45] - YAML 版本: 6.0.2
+[2024-11-09 21:17:47] WARNING [log_util.py:48] - [dev] SSL验证已禁用！
+[2024-11-09 21:17:47] INFO [log_util.py:45] - RequestUtil 初始化完成 [环境: dev]
+[2024-11-09 21:17:47] DEBUG [log_util.py:42] - 获取基础URL: https://jsonplaceholder.typicode.com
+[2024-11-09 21:17:47] INFO [log_util.py:45] - PostsApi 初始化完成
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 测试类初始化完成
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 测试数据加载完成
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 开始执行测试: test_create_post
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 
+==================================================
+测试开始执行
+环境: DEV
+API地址: https://jsonplaceholder.typicode.com
+==================================================
+
+[2024-11-09 21:17:47] DEBUG [log_util.py:42] - 获取基础URL: https://jsonplaceholder.typicode.com
+[2024-11-09 21:17:47] INFO [log_util.py:45] - AuthApi 初始化完成
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 模拟用户登录: testuser
+[2024-11-09 21:17:47] INFO [log_util.py:45] - 发送 GET 请求到 https://jsonplaceholder.typicode.com/users/1
+[2024-11-09 21:17:47] DEBUG [log_util.py:42] - 请求参数: {}
+[2024-11-09 21:17:48] INFO [log_util.py:45] - 响应状态码: 200
+[2024-11-09 21:17:48] DEBUG [log_util.py:42] - 响应内容: {
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+[2024-11-09 21:17:48] DEBUG [log_util.py:42] - Token已更新
+[2024-11-09 21:17:48] INFO [log_util.py:45] - 模拟登录成功，token已保存
+[2024-11-09 21:17:48] INFO [log_util.py:45] - 测试前置：登录成功
+[2024-11-09 21:17:48] INFO [log_util.py:45] - 创建新帖子
+[2024-11-09 21:17:48] DEBUG [log_util.py:42] - 标题: 测试帖子标题, 内容: 测试帖子内容, 用户ID: 1
+[2024-11-09 21:17:48] INFO [log_util.py:45] - 发送 POST 请求到 https://jsonplaceholder.typicode.com/posts
+[2024-11-09 21:17:48] DEBUG [log_util.py:42] - 请求参数: {'json': {'title': '测试帖子标题', 'body': '测试帖子内容', 'userId': 1}}
+[2024-11-09 21:17:49] INFO [log_util.py:45] - 响应状态码: 201
+[2024-11-09 21:17:49] DEBUG [log_util.py:42] - 响应内容: {
+  "title": "测试帖子标题",
+  "body": "测试帖子内容",
+  "userId": 1,
+  "id": 101
+}
+[2024-11-09 21:17:49] INFO [log_util.py:45] - 模拟用户登出
+[2024-11-09 21:17:49] DEBUG [log_util.py:42] - Token已清除
+[2024-11-09 21:17:49] INFO [log_util.py:45] - 测试后置：已登出
+[2024-11-09 21:17:49] INFO [log_util.py:45] - 测试执行完成: test_create_post

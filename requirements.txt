@@ -1,0 +1,12 @@
+pytest>=7.0.0
+pytest-assume>=2.4.3
+allure-pytest>=2.13.0
+
+# HTTP 请求
+requests>=2.31.0
+
+# 数据处理
+pyyaml>=6.0.0
+
+# 测试报告
+allure-python-commons>=2.13.0 

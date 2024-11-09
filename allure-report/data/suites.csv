@@ -1,0 +1,17 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+        测试获取帖子的功能：
+        1. 验证正常获取帖子
+        2. 验证获取不存在的帖子
+    ","126","测试获取单个帖子","testcases","Sat Nov 09 02:52:23 CST 2024","passed","Sat Nov 09 02:52:23 CST 2024","TestPosts","test_posts","",""
+"
+        测试获取帖子的功能：
+        1. 验证正常获取帖子
+        2. 验证获取不存在的帖子
+    ","191","测试获取单个帖子","testcases","Sat Nov 09 02:52:23 CST 2024","passed","Sat Nov 09 02:52:24 CST 2024","TestPosts","test_posts","",""
+"测试创建帖子接口","718","测试创建新帖子","testcases","Sat Nov 09 02:52:24 CST 2024","passed","Sat Nov 09 02:52:24 CST 2024","TestPosts","test_posts","",""
+"
+        测试获取帖子的功能：
+        1. 验证正常获取帖子
+        2. 验证获取不存在的帖子
+    ","323","测试获取单个帖子","testcases","Sat Nov 09 02:52:23 CST 2024","passed","Sat Nov 09 02:52:23 CST 2024","TestPosts","test_posts","",""

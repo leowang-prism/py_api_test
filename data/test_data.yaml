@@ -1,0 +1,4 @@
+test_post:
+  title: "测试帖子标题"
+  body: "测试帖子内容"
+  user_id: 1 

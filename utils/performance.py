@@ -1,6 +1,6 @@
 """性能监控工具模块"""
 import time
-import psutil
+import psutil # type: ignore
 import statistics
 from utils.log_util import logger
 

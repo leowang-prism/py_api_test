@@ -1,5 +1,5 @@
 import os
-import yaml
+import yaml # type: ignore
 
 class EnvManager:
     def __init__(self):

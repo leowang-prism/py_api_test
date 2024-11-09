@@ -15,15 +15,18 @@ import yaml
 
 # 本地模块
 from api.posts_api import PostsApi
+from utils.log_util import logger
 
 @allure.epic("Posts API Testing")
 class TestPosts:
     def setup_class(self):
         self.posts_api = PostsApi()
+        logger.info("测试类初始化完成")
         # 加载测试数据
         data_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'test_data.yaml')
         with open(data_path, 'r', encoding='utf-8') as f:
             self.test_data = yaml.safe_load(f)
+        logger.info("测试数据加载完成")
 
     @allure.story("获取帖子")
     @allure.title("测试获取单个帖子")
@@ -88,6 +91,7 @@ class TestPosts:
     @allure.severity(allure.severity_level.CRITICAL)
     def test_create_and_update_post_flow(self):
         """测试创建和更新帖子的完整流程"""
+        logger.info("开始测试：创建和更新帖子流程")
         try:
             # 第一步：创建帖子
             with allure.step("创建新帖子"):
@@ -141,14 +145,9 @@ class TestPosts:
                 if 'body' in updated_post:
                     assert updated_post['body'] == update_data['body'], "更新的帖子内容不匹配"
                 
+            logger.info("测试完成：创建和更新帖子流程")
         except Exception as e:
-            # 记录详细的错误信息
-            allure.attach(
-                f"错误类型: {type(e).__name__}\n"
-                f"错误信息: {str(e)}\n",
-                '测试失败详情',
-                allure.attachment_type.TEXT
-            )
+            logger.error(f"测试失败：{str(e)}")
             raise
 
     @allure.story("删除帖子")

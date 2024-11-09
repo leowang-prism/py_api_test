@@ -1,0 +1,10 @@
+[32mINFO    [0m TestLogger:log_util.py:45 获取帖子 ID: 2
+[32mINFO    [0m TestLogger:log_util.py:45 发送 GET 请求到 https://jsonplaceholder.typicode.com/posts/2
+[35mDEBUG   [0m TestLogger:log_util.py:42 请求参数: {}
+[32mINFO    [0m TestLogger:log_util.py:45 响应状态码: 200
+[35mDEBUG   [0m TestLogger:log_util.py:42 响应内容: {
+  "userId": 1,
+  "id": 2,
+  "title": "qui est esse",
+  "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+}

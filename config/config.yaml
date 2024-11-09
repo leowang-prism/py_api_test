@@ -7,3 +7,10 @@ api:
     - POST 请求将返回 201，但不会真正创建数据
     - PATCH/PUT 请求将返回 200，但不会真正更新数据
     - DELETE 请求将返回 200，但不会真正删除数据
+
+logging:
+  level: DEBUG
+  file_level: DEBUG
+  console_level: INFO
+  format: "[%(asctime)s] %(levelname)s [%(filename)s:%(lineno)d] - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"

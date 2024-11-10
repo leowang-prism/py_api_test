@@ -3,10 +3,14 @@ suites:
   smoke:
     - test_login
     - test_basic_functions
+    - test_get_post
   regression:
     - test_all_features
     - test_edge_cases
+    - test_create_post
   performance:
+    - test_api_response_time
+    - test_concurrent_requests
     - test_load
     - test_stress
 
@@ -15,7 +19,9 @@ priorities:
   high:
     - test_critical_path
     - test_payment
+    - test_get_post
   medium:
     - test_normal_functions
+    - test_create_post
   low:
     - test_optional_features 

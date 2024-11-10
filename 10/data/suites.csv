@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"测试获取帖子接口","20","测试获取单个帖子","testcases","Sun Nov 10 01:10:35 GMT 2024","passed","Sun Nov 10 01:10:35 GMT 2024","TestPosts","test_posts","",""
+"测试获取帖子接口","18","测试获取单个帖子","testcases","Sun Nov 10 01:10:35 GMT 2024","passed","Sun Nov 10 01:10:35 GMT 2024","TestPosts","test_posts","",""
+"测试获取帖子接口","36","测试获取单个帖子","testcases","Sun Nov 10 01:10:35 GMT 2024","passed","Sun Nov 10 01:10:35 GMT 2024","TestPosts","test_posts","",""

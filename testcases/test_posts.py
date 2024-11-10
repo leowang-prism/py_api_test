@@ -141,11 +141,11 @@ class TestPosts(BaseTest):
             get_response = self.posts_api.get_post(post_id)
             assert get_response.status_code == 404, "已删除的帖子应返回404"
 
-    @allure.story("性能测试")
-    @performance_test  # 标记为性能测试
-    def test_post_performance(self):
-        """帖子接口性能测试"""
-        # ... 测试代码 ...
+    # @allure.story("性能测试")
+    # @performance_test  # 标记为性能测试
+    # def test_post_performance(self):
+    #     """帖子接口性能测试"""
+    #     # ... 测试代码 ...
 
     # @allure.story("创建帖子并验证数据库记录")
     # @allure.title("测试创建帖子并验证数据库记录")

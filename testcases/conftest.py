@@ -8,7 +8,7 @@ Pytest配置文件
 3. 测试数据管理
 """
 
-import pytest
+import pytest # type: ignore
 from utils.env_util import env_manager
 from utils.log_util import logger
 

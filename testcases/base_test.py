@@ -1,5 +1,5 @@
-import pytest
-import allure
+import pytest # type: ignore
+import allure # type: ignore
 from api.auth_api import AuthApi
 from utils.log_util import logger
 from utils.env_util import env_manager

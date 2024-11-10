@@ -1,6 +1,6 @@
-import yaml
+import yaml # type: ignore
 from pathlib import Path
-import pytest
+
 
 class TestSuiteManager:
     def __init__(self):

@@ -28,27 +28,27 @@ project_root/
 ├── data/                        # 测试数据
 │   └── test_data.yaml          # 测试数据文件
 │
-├── database/                    # 数据库操作
-│   └── mysql_handler.py        # MySQL 数据库处理器
+<!-- ├── database/                    # 数据库操作
+│   └── mysql_handler.py        # MySQL 数据库处理器 -->
 │
 ├── testcases/                   # 测试用例
 │   ├── __init__.py
 │   ├── conftest.py             # pytest 配置和 fixtures
 │   ├── base_test.py            # 测试基类
 │   ├── test_posts.py           # 帖子相关测试
-│   ├── test_consistency.py     # 数据一致性测试
-│   └── test_performance.py     # 性能测试
+<!-- │   ├── test_consistency.py     # 数据一致性测试
+│   └── test_performance.py     # 性能测试 -->
 │
 ├── utils/                       # 工具类
-│   ├── assert_util.py          # 断言工具
+<!-- │   ├── assert_util.py          # 断言工具
 │   ├── concurrent.py           # 并发测试支持
 │   ├── data_factory.py         # 测试数据生成
 │   ├── data_util.py            # 数据处理工具
-│   ├── db_util.py              # 数据库工具
+│   ├── db_util.py              # 数据库工具 -->
 │   ├── env_checker.py          # 环境检查工具
 │   ├── env_util.py             # 环境管理工具
 │   ├── log_util.py             # 日志工具
-│   ├── performance.py          # 性能监控工具
+<!-- │   ├── performance.py          # 性能监控工具 -->
 │   ├── report_enhancer.py      # 报告增强工具
 │   ├── request_util.py         # HTTP 请求工具
 │   └── retry.py                # 重试机制

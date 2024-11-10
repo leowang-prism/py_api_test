@@ -1,4 +1,4 @@
-import pytest
+import pytest # type: ignore
 from .suite_manager import suite_manager
 
 def smoke_test(func):

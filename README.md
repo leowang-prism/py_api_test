@@ -1,7 +1,62 @@
 # API 自动化测试项目
 
+## 项目结构
 
-![Uploading image.png…]()
+```plaintext
+project_root/
+├── api/                          # API 接口层
+│   ├── __init__.py
+│   ├── base_api.py              # API 基类，提供基础请求方法
+│   ├── auth_api.py              # 认证相关 API
+│   └── posts_api.py             # 帖子相关 API
+│
+├── common/                       # 通用功能模块
+│   ├── __init__.py
+│   └── exceptions.py            # 自定义异常类
+│
+├── config/                       # 配置文件目录
+│   ├── config.yaml              # 主配置文件
+│   └── env/                     # 环境配置
+│       ├── dev.yaml             # 开发环境配置
+│       ├── test.yaml            # 测试环境配置
+│       └── prod.yaml            # 生产环境配置
+│
+├── data/                        # 测试数据
+│   └── test_data.yaml          # 测试数据文件
+│
+├── testcases/                   # 测试用例
+│   ├── __init__.py
+│   ├── conftest.py             # pytest 配置和 fixtures
+│   ├── base_test.py            # 测试基类
+│   └── test_posts.py           # 帖子相关测试
+│
+├── utils/                       # 工具类
+│   ├── env_checker.py          # 环境检查工具
+│   ├── env_util.py             # 环境管理工具
+│   ├── log_util.py             # 日志工具
+│   ├── report_enhancer.py      # 报告增强工具
+│   ├── request_util.py         # HTTP 请求工具
+│   └── retry.py                # 重试机制
+│
+├── .github/                     # GitHub 配置
+│   ├── workflows/              # GitHub Actions
+│   │   └── api-test.yml        # CI/CD 配置
+│   └── env/
+│       └── ci.env              # CI 环境变量
+│
+├── logs/                        # 日志文件目录
+│   └── test_execution.log      # 执行日志
+│
+├── reports/                     # 测试报告
+│   ├── allure-results/         # Allure 原始数据
+│   └── allure-report/          # Allure HTML 报告
+│
+├── requirements.txt            # 项目依赖
+├── pytest.ini                  # pytest 配置
+├── run_tests.sh                # Linux/Mac 运行脚本
+├── run_tests.bat               # Windows 运行脚本
+├── quick_test.sh               # 快速测试脚本 (Linux/Mac)
+└── quick_test.bat              # 快速测试脚本 (Windows)
 
 
 
